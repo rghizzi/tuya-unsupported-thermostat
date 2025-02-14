@@ -1,3 +1,10 @@
+# UPDATE 20250214:
+Scratch the update below. This component now also fixes #136472 by adding support for some Temperature and 
+Humidity Sensors (with External Probe).   
+Thus, as Tuya keeps messing around (to be nice), this component will likely serve a while longer as testing platform 
+and /or temporary replacement.      
+Can't be bothered to update the README right now ;)
+
 # UPDATE 20250213:
 PR #136960 has been merged into /home-assistant/core/tree/dev, closing issue #132844. 
 This means the official Tuya Integration will have this fix incorporated in a future Home Assistant release,
