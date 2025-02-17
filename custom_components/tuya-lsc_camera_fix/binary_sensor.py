@@ -292,6 +292,9 @@ BINARY_SENSORS: dict[str, tuple[TuyaBinarySensorEntityDescription, ...]] = {
     # https://developer.tuya.com/en/docs/iot/categorywsdcg?id=Kaiuz3hinij34
     "wsdcg": (TAMPER_BINARY_SENSOR,),
     # Temperature and Humidity Sensor - Unsupported
+    # New undocumented category tdq
+    "tdq": (TAMPER_BINARY_SENSOR,),
+    # Temperature and Humidity Sensor with External Probe - Unsupported
     # New undocumented category qxj
     "qxj": (TAMPER_BINARY_SENSOR,),
     # Pressure Sensor
