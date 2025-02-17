@@ -594,7 +594,7 @@ SWITCHES: dict[str, tuple[SwitchEntityDescription, ...]] = {
             translation_key="switch",
         ),
     ),
-    # IoT Switch?
+    # IoT Switch? Temperature & Humidity Sensor?
     # Note: Undocumented
     "tdq": (
         SwitchEntityDescription(

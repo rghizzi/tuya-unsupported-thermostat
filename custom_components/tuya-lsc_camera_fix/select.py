@@ -162,7 +162,7 @@ SELECTS: dict[str, tuple[SelectEntityDescription, ...]] = {
             translation_key="motion_sensitivity",
         ),
     ),
-    # IoT Switch?
+    # IoT Switch? Temperature & Humidity Sensor?
     # Note: Undocumented
     "tdq": (
         SelectEntityDescription(
