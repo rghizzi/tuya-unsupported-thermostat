@@ -22,7 +22,7 @@ CAMERAS: tuple[str, ...] = (
     "sp",
     # Smart Camera - Low power consumption camera
     # Undocumented, see https://github.com/home-assistant/core/issues/132844
-    "dghsxj"
+    "dghsxj",
 )
 
 
