@@ -398,7 +398,7 @@ LIGHTS["dghsxj"] = LIGHTS["sp"]
 
 # Dimmer (duplicate of `tgq`)
 # https://developer.tuya.com/en/docs/iot/tgq?id=Kaof8ke9il4k4
-#LIGHTS["tdq"] = LIGHTS["tgq"]
+# LIGHTS["tdq"] = LIGHTS["tgq"]
 
 
 @dataclass
