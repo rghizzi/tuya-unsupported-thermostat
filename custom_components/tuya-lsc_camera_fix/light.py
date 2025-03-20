@@ -20,7 +20,7 @@ from homeassistant.components.light import (
 from homeassistant.const import EntityCategory
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.util import color as color_util
 
 from . import TuyaConfigEntry
@@ -327,6 +327,18 @@ LIGHTS: dict[str, tuple[TuyaLightEntityDescription, ...]] = {
             brightness_min=DPCode.BRIGHTNESS_MIN_1,
         ),
     ),
+    # Outdoor Flood Light
+    # Not documented
+    "tyd": (
+        TuyaLightEntityDescription(
+            key=DPCode.SWITCH_LED,
+            name=None,
+            color_mode=DPCode.WORK_MODE,
+            brightness=DPCode.BRIGHT_VALUE,
+            color_temp=DPCode.TEMP_VALUE,
+            color_data=DPCode.COLOUR_DATA,
+        ),
+    ),
     # Solar Light
     # https://developer.tuya.com/en/docs/iot/tynd?id=Kaof8j02e1t98
     "tyndj": (
@@ -398,7 +410,7 @@ LIGHTS["dghsxj"] = LIGHTS["sp"]
 
 # Dimmer (duplicate of `tgq`)
 # https://developer.tuya.com/en/docs/iot/tgq?id=Kaof8ke9il4k4
-# LIGHTS["tdq"] = LIGHTS["tgq"]
+LIGHTS["tdq"] = LIGHTS["tgq"]
 
 
 @dataclass
@@ -425,7 +437,9 @@ class ColorData:
 
 
 async def async_setup_entry(
-    hass: HomeAssistant, entry: TuyaConfigEntry, async_add_entities: AddEntitiesCallback
+    hass: HomeAssistant,
+    entry: TuyaConfigEntry,
+    async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up tuya light dynamically through tuya discovery."""
     hass_data = entry.runtime_data

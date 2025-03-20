@@ -1,8 +1,7 @@
 {
-  "domain": "tuya-lsc_camera_fix",
-  "name": "Tuya LSC Camera Fix",
-  "version": "1.0.1",
-  "codeowners": ["@maghiel"],
+  "domain": "tuya",
+  "name": "Tuya",
+  "codeowners": ["@Tuya", "@zlinoliver"],
   "config_flow": true,
   "dependencies": ["ffmpeg"],
   "dhcp": [
