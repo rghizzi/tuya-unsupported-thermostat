@@ -137,6 +137,22 @@ class TuyaClimateEntity(TuyaEntity, ClimateEntity):
 
         super().__init__(device, device_manager)
 
+        import logging
+        import pprint
+
+        _LOGGER = logging.getLogger(__name__)
+
+        _LOGGER.debug("======= DEBUG TUYA DEVICE =======")
+        _LOGGER.debug("Device ID: %s", device.id)
+        _LOGGER.debug("Device Category: %s", device.category)
+        _LOGGER.debug("Device Status:")
+        _LOGGER.debug("\n%s", pprint.pformat(device.status))
+        _LOGGER.debug("Device Functions:")
+        _LOGGER.debug("\n%s", pprint.pformat(device.function))
+        _LOGGER.debug("Device Status Range:")
+        _LOGGER.debug("\n%s", pprint.pformat(device.status_range))
+        _LOGGER.debug("======= END DEBUG TUYA DEVICE =======")
+        
         # If both temperature values for celsius and fahrenheit are present,
         # use whatever the device is set to, with a fallback to celsius.
         prefered_temperature_unit = None
